@@ -71,13 +71,9 @@ int find_path ( int maze[][n], int a, int b, char sol_maze[][n], char path_direc
 
     sol_maze[a][b] = path_director;
 
-    if ( find_path(maze, a + 1, b, sol_maze, '|') == true ) {
+    if ( find_path(maze, a + 1, b, sol_maze, '|') == true ) return true;
 
-      return true;
-    }
-
-    if ( find_path(maze, a, b + 1, sol_maze, '_') == true )
-      return true;
+    if ( find_path(maze, a, b + 1, sol_maze, '_') == true ) return true;
 
     sol_maze[a][b] = (char) '.';
     return false;
